@@ -2,11 +2,13 @@
 #include <Bitmap.h>
 #include <Menu.h>
 #include <MenuItem.h>
+#include <Box.h>
 
 #include "IconMenu.h"
 
 #ifndef _FSWINDOW_H
 #define _FSWINDOW_H
+
 
 class FolderShaperWindow : public BWindow
 {
