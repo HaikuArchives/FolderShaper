@@ -274,7 +274,7 @@ FolderShaper::OpenTemplatesFolder	()
 
 	BString command(p.Path());
 	NameSafe(& command);
-	command.Prepend("/boot/beos/system/Tracker ");
+	command.Prepend("/boot/system/Tracker ");
 	system(command.String());
 }
 
@@ -601,22 +601,21 @@ FolderShaper::IsFolderUntouchable(uint32 purpose, const entry_ref * a_ref)
 	if	(IsItThisFolder(a_ref, B_BEOS_ETC_DIRECTORY))				return SysDirMessage(a_ref);
 	if	(IsItThisFolder(a_ref, B_BEOS_DOCUMENTATION_DIRECTORY))		return SysDirMessage(a_ref);
 	if	(IsItThisFolder(a_ref, B_BEOS_PREFERENCES_DIRECTORY))		return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_DIRECTORY))					return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_SYSTEM_DIRECTORY))			return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_ADDONS_DIRECTORY))			return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_BOOT_DIRECTORY))			return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_FONTS_DIRECTORY))			return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_LIB_DIRECTORY))				return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_SERVERS_DIRECTORY))			return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_BIN_DIRECTORY))				return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_ETC_DIRECTORY))				return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_DOCUMENTATION_DIRECTORY))	return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_SETTINGS_DIRECTORY))		return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_DEVELOP_DIRECTORY))			return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_LOG_DIRECTORY))				return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_SPOOL_DIRECTORY))			return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_TEMP_DIRECTORY))			return SysDirMessage(a_ref);
-	if	(IsItThisFolder(a_ref, B_COMMON_VAR_DIRECTORY))				return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_DIRECTORY))					return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_ADDONS_DIRECTORY))			return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_BOOT_DIRECTORY))			return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_FONTS_DIRECTORY))			return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_LIB_DIRECTORY))				return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_SERVERS_DIRECTORY))			return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_BIN_DIRECTORY))				return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_ETC_DIRECTORY))				return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_DOCUMENTATION_DIRECTORY))	return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_SETTINGS_DIRECTORY))		return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_DEVELOP_DIRECTORY))			return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_LOG_DIRECTORY))				return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_SPOOL_DIRECTORY))			return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_TEMP_DIRECTORY))			return SysDirMessage(a_ref);
+	if	(IsItThisFolder(a_ref, B_SYSTEM_VAR_DIRECTORY))				return SysDirMessage(a_ref);
 	if	(IsItThisFolder(a_ref, B_USER_DIRECTORY))					return SysDirMessage(a_ref);
 	if	(IsItThisFolder(a_ref, B_USER_CONFIG_DIRECTORY))			return SysDirMessage(a_ref);
 	if	(IsItThisFolder(a_ref, B_USER_ADDONS_DIRECTORY))			return SysDirMessage(a_ref);
@@ -872,7 +871,7 @@ FolderShaper::ShapeRef	(entry_ref * a_ref, const char * a_template, bool a_do_op
 	{
 		// open folder
 		command =	original_path_string;
-		command.Prepend("/boot/beos/system/Tracker ");
+		command.Prepend("/boot/system/Tracker ");
 		command.Append(" &");
 		
 		system(command.String());
